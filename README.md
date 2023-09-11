@@ -2,7 +2,7 @@
 
 # Laravel - Админ-панель новостей
 
-<p align="center"<img src="https://raw.githubusercontent.com/ismailhanBaylyev/news-admin/main/public/assets/images/screen/NewsAdmin.PNG" height="auto" width="100%"></p>
+<p align="center"<img src="https://raw.githubusercontent.com/ismailhanBaylyev/news-admin/main/public/assets/images/screen/news_admin.png" height="auto" width="100%"></p>
 
 > Макет админ-панели был сделан на Bootstrap. Также для удобство и визуальной привлекательности были использованы, такие плагины:
 
@@ -17,80 +17,189 @@
 
 В админ-панели вы можете (Просматривать, Добавлять и Редактировать информацию), также есть поддержка API!
 
-## Пошаговая инструкция установки
+## Инструкция 🚀
 
-### 1. Загрузите проект
+Скачайте и установите проект. После уставновки, нужно создать базу данных и запускайте сервер.
 
-Откройте консоль:
+## Установка ⚒️
+
+Для установки проекта надо выполнить все шаги 🤘
+
+1. Загрузите проект и откройте терминал в корневой папке.
+2. Выполните команду "install composer"
 
 ```bash
-composer require tcg/voyager
+composer install
 ```
 
-> If you are installing this on Laravel 10, we are working on getting a permanent release available; however, you can still use this with Larvel 10 by requiring the following:
+3. Выполните команду для генерации ключа
 
 ```bash
-composer require tcg/voyager dev-1.6-l10
+php artisan key:generate
 ```
 
-### 2. Add the DB Credentials & APP_URL
-
-Next make sure to create a new database and add your database credentials to your .env file:
+4. Теперь нужно добавить информацию о базе данных в .env файл:
 
 ```
 DB_HOST=localhost
-DB_DATABASE=homestead
-DB_USERNAME=homestead
-DB_PASSWORD=secret
+DB_DATABASE=news
+DB_USERNAME=root
+DB_PASSWORD=
 ```
 
-You will also want to update your website URL inside of the `APP_URL` variable inside the .env file:
-
-```
-APP_URL=http://localhost:8000
-```
-
-### 3. Run The Installer
-
-Lastly, we can install voyager. You can do this either with or without dummy data.
-The dummy data will include 1 admin account (if no users already exists), 1 demo page, 4 demo posts, 2 categories and 7 settings.
-
-To install Voyager without dummy simply run
+5. Выполните команду для создания и заполнения базы данных тестовыми данными:
 
 ```bash
-php artisan voyager:install
+php artisan migrate --seed
 ```
 
-If you prefer installing it with dummy run
+Если вы хотите только создать базу данных с таблицами без тестовых данных. Выполните эту команду:
 
 ```bash
-php artisan voyager:install --with-dummy
+php artisan migrate
 ```
 
-And we're all good to go!
-
-Start up a local development server with `php artisan serve` And, visit [http://localhost:8000/admin](http://localhost:8000/admin).
-
-## Creating an Admin User
-
-If you did go ahead with the dummy data, a user should have been created for you with the following login credentials:
-
->**email:** `admin@admin.com`   
->**password:** `password`
-
-NOTE: Please note that a dummy user is **only** created if there are no current users in your database.
-
-If you did not go with the dummy user, you may wish to assign admin privileges to an existing user.
-This can easily be done by running this command:
+6. Теперь просто запустите эту команду для запуска сервера.
 
 ```bash
-php artisan voyager:admin your@email.com
+php artisan serve
 ```
 
-If you did not install the dummy data and you wish to create a new admin user, you can pass the `--create` flag, like so:
+7. Скопируйте адрес после запуска сервера и можете пользоваться.🥳
 
-```bash
-php artisan voyager:admin your@email.com --create
-```
+## API 📜
 
-And you will be prompted for the user's name and password.
+### GET /api/news/<page>
+
+#### Получения всех статей, с пагинацией
+
+> <page> - Номер страницу по умолчанию: 1
+> Список всех активных статей
+
+    [
+        {
+            "id": 11,
+            "category_id": 2,
+            "name": "Test",
+            "slug": "Test",
+            "content": "Testing",
+            "image": "public/images/Cz84zhNqMRAlJnGAj3yTnH6lNmWNGcX7i55DxetF.jpg",
+            "sort": 0,
+            "status": 1,
+            "created_at": "2023-09-11T01:11:39.000000Z",
+            "updated_at": "2023-09-11T01:11:39.000000Z"
+        },
+        {
+            "id": 3,
+            "category_id": 5,
+            "name": "eveniet aut reiciendis at soluta",
+            "slug": "odit",
+            "content": "Molestiae recusandae enim distinctio dolorem similique qui veniam tempora unde voluptatem assumenda et deserunt deleniti quod quia aut est totam exercitationem tenetur dolore non est consequatur sunt facere aspernatur earum aut unde dolor blanditiis sapiente dolores.",
+            "image": "public/images/test.jpg",
+            "sort": 1,
+            "status": 1,
+            "created_at": "2023-09-11T00:33:34.000000Z",
+            "updated_at": "2023-09-11T01:01:34.000000Z"
+        },
+        {
+            "id": 5,
+            "category_id": 4,
+            "name": "et laborum ut aliquid voluptatum",
+            "slug": "odit",
+            "content": "Quae optio ullam molestiae delectus officiis sapiente rerum mollitia aliquid qui doloribus ratione pariatur inventore eligendi eum vel rem eius quia quas eum reprehenderit a corporis et maiores ut repudiandae eveniet molestiae repudiandae non totam.",
+            "image": "public/images/test.jpg",
+            "sort": 5,
+            "status": 1,
+            "created_at": "2023-09-11T00:33:34.000000Z",
+            "updated_at": "2023-09-11T00:36:01.000000Z"
+        }
+    ]
+
+### GET /api/category
+
+#### Получения всех категорий статей
+
+> Список активных категорий
+
+[
+  {
+    "id": 4,
+    "name": "assumenda",
+    "sort": 5,
+    "status": 1,
+    "created_at": "2023-09-11T00:33:34.000000Z",
+    "updated_at": "2023-09-11T00:35:36.000000Z"
+  },
+  {
+    "id": 1,
+    "name": "nostrum",
+    "sort": 2,
+    "status": 1,
+    "created_at": "2023-09-11T00:33:34.000000Z",
+    "updated_at": "2023-09-11T00:33:34.000000Z"
+  },
+  {
+    "id": 2,
+    "name": "dolores",
+    "sort": 1,
+    "status": 1,
+    "created_at": "2023-09-11T00:33:34.000000Z",
+    "updated_at": "2023-09-11T00:33:34.000000Z"
+  }
+]
+
+### GET /api/category-news/<category-id>
+
+#### Получения статей по заданной категории
+
+> <category-id> - Нужно указать <b>ID</b> категории
+> Список активных статей по заданной категории
+
+[
+  {
+    "id": 10,
+    "category_id": 2,
+    "name": "voluptate aut cupiditate dolor eaque",
+    "slug": "cum",
+    "content": "Quo sapiente possimus sint veritatis ipsum assumenda consequatur odio quasi reiciendis et assumenda ut explicabo ex qui tenetur saepe porro repellat recusandae voluptatem dolor et quia quia culpa et perferendis vero commodi suscipit veritatis sequi qui dolorem fugiat dolor repellat aliquid iusto reprehenderit facilis adipisci enim fugiat quia consequatur corrupti asperiores et laboriosam sit est dicta.",
+    "image": "public/images/test.jpg",
+    "sort": 1,
+    "status": 1,
+    "created_at": "2023-09-11T00:33:34.000000Z",
+    "updated_at": "2023-09-11T00:35:54.000000Z"
+  },
+  {
+    "id": 6,
+    "category_id": 2,
+    "name": "ipsam magni voluptas sed et",
+    "slug": "dolores",
+    "content": "Vel aliquid facere quod ipsum repudiandae sed omnis ut eligendi quisquam quos fugit harum porro voluptas unde ipsa id modi neque rem sed ducimus accusantium et ipsa incidunt sapiente debitis expedita veritatis et quo aliquid qui quidem temporibus consequuntur a perspiciatis et qui.",
+    "image": "public/images/test.jpg",
+    "sort": 4,
+    "status": 1,
+    "created_at": "2023-09-11T00:33:34.000000Z",
+    "updated_at": "2023-09-11T00:33:34.000000Z"
+  },
+]
+
+### GET /api/news-slug/<slug>
+
+#### Получения статьи по slug
+
+> <slug> - Нужно указать <b>Slug</b> статьи
+> Список активных статей по slug
+
+[
+  {
+    "id": 5,
+    "category_id": 4,
+    "name": "et laborum ut aliquid voluptatum",
+    "slug": "odit",
+    "content": "Quae optio ullam molestiae delectus officiis sapiente rerum mollitia aliquid qui doloribus ratione pariatur inventore eligendi eum vel rem eius quia quas eum reprehenderit a corporis et maiores ut repudiandae eveniet molestiae repudiandae non totam.",
+    "image": "public/images/test.jpg",
+    "sort": 5,
+    "status": 1,
+    "created_at": "2023-09-11T00:33:34.000000Z",
+    "updated_at": "2023-09-11T00:36:01.000000Z"
+  }
+]
