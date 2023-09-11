@@ -73,7 +73,7 @@ php artisan serve
 
 #### Получения всех статей, с пагинацией
 
-> (page) - Номер страницу по умолчанию: 1
+> (page) - Номер страницу по умолчанию: 1<br>
 > Список всех активных статей
 
     
@@ -122,71 +122,71 @@ php artisan serve
 > Список активных категорий
 
 
-  {
-    "id": 4,
-    "name": "assumenda",
-    "sort": 5,
-    "status": 1,
-    "created_at": "2023-09-11T00:33:34.000000Z",
-    "updated_at": "2023-09-11T00:35:36.000000Z"
-  },
-  {
-    "id": 1,
-    "name": "nostrum",
-    "sort": 2,
-    "status": 1,
-    "created_at": "2023-09-11T00:33:34.000000Z",
-    "updated_at": "2023-09-11T00:33:34.000000Z"
-  },
-  {
-    "id": 2,
-    "name": "dolores",
-    "sort": 1,
-    "status": 1,
-    "created_at": "2023-09-11T00:33:34.000000Z",
-    "updated_at": "2023-09-11T00:33:34.000000Z"
-  }
+    {
+        "id": 4,
+        "name": "assumenda",
+        "sort": 5,
+        "status": 1,
+        "created_at": "2023-09-11T00:33:34.000000Z",
+        "updated_at": "2023-09-11T00:35:36.000000Z"
+    },
+    {
+        "id": 1,
+        "name": "nostrum",
+        "sort": 2,
+        "status": 1,
+        "created_at": "2023-09-11T00:33:34.000000Z",
+        "updated_at": "2023-09-11T00:33:34.000000Z"
+    },
+    {
+        "id": 2,
+        "name": "dolores",
+        "sort": 1,
+        "status": 1,
+        "created_at": "2023-09-11T00:33:34.000000Z",
+        "updated_at": "2023-09-11T00:33:34.000000Z"
+    }
 
 
 ### GET /api/category-news/(category-id)
 
 #### Получения статей по заданной категории
 
-> (category-id) - Нужно указать <b>ID</b> категории
+> (category-id) - Нужно указать <b>ID</b> категории<br>
 > Список активных статей по заданной категории
 
 
-  {
-    "id": 10,
-    "category_id": 2,
-    "name": "voluptate aut cupiditate dolor eaque",
-    "slug": "cum",
-    "content": "Quo sapiente possimus sint veritatis ipsum assumenda consequatur odio quasi reiciendis et assumenda ut explicabo ex qui tenetur saepe porro repellat recusandae voluptatem dolor et quia quia culpa et perferendis vero commodi suscipit veritatis sequi qui dolorem fugiat dolor repellat aliquid iusto reprehenderit facilis adipisci enim fugiat quia consequatur corrupti asperiores et laboriosam sit est dicta.",
-    "image": "public/images/test.jpg",
-    "sort": 1,
-    "status": 1,
-    "created_at": "2023-09-11T00:33:34.000000Z",
-    "updated_at": "2023-09-11T00:35:54.000000Z"
-  },
-  {
-    "id": 6,
-    "category_id": 2,
-    "name": "ipsam magni voluptas sed et",
-    "slug": "dolores",
-    "content": "Vel aliquid facere quod ipsum repudiandae sed omnis ut eligendi quisquam quos fugit harum porro voluptas unde ipsa id modi neque rem sed ducimus accusantium et ipsa incidunt sapiente debitis expedita veritatis et quo aliquid qui quidem temporibus consequuntur a perspiciatis et qui.",
-    "image": "public/images/test.jpg",
-    "sort": 4,
-    "status": 1,
-    "created_at": "2023-09-11T00:33:34.000000Z",
-    "updated_at": "2023-09-11T00:33:34.000000Z"
-  },
+    {
+        "id": 10,
+        "category_id": 2,
+        "name": "voluptate aut cupiditate dolor eaque",
+        "slug": "cum",
+        "content": "Quo sapiente possimus sint veritatis ipsum assumenda consequatur odio quasi reiciendis et assumenda ut explicabo ex qui tenetur saepe porro repellat recusandae voluptatem dolor et quia quia culpa et perferendis vero commodi suscipit veritatis sequi qui dolorem fugiat dolor repellat aliquid iusto reprehenderit facilis adipisci enim fugiat quia consequatur corrupti asperiores et laboriosam sit est dicta.",
+        "image": "public/images/test.jpg",
+        "sort": 1,
+        "status": 1,
+        "created_at": "2023-09-11T00:33:34.000000Z",
+        "updated_at": "2023-09-11T00:35:54.000000Z"
+    },
+    {
+        "id": 6,
+        "category_id": 2,
+        "name": "ipsam magni voluptas sed et",
+        "slug": "dolores",
+        "content": "Vel aliquid facere quod ipsum repudiandae sed omnis ut eligendi quisquam quos fugit harum porro voluptas unde ipsa id modi neque rem sed ducimus accusantium et ipsa incidunt sapiente debitis expedita veritatis et quo aliquid qui quidem temporibus consequuntur a perspiciatis et qui.",
+        "image": "public/images/test.jpg",
+        "sort": 4,
+        "status": 1,
+        "created_at": "2023-09-11T00:33:34.000000Z",
+        "updated_at": "2023-09-11T00:33:34.000000Z"
+    }
 
 
 ### GET /api/news-slug/(slug)
 
 #### Получения статьи по slug
 
-> (slug) - Нужно указать <b>Slug</b> статьи
+> (slug) - Нужно указать <b>Slug</b> статьи<br>
 > Список активных статей по slug
 
 
