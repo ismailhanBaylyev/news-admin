@@ -26,7 +26,7 @@
 Для установки проекта надо выполнить все шаги 🤘
 
 1. Загрузите проект и откройте терминал в корневой папке.
-2. Выполните команду "install composer"
+2. Выполните команду:
 
 ```bash
 composer install
@@ -190,16 +190,16 @@ php artisan serve
 > Список активных статей по slug
 
 
-  {
-    "id": 5,
-    "category_id": 4,
-    "name": "et laborum ut aliquid voluptatum",
-    "slug": "odit",
-    "content": "Quae optio ullam molestiae delectus officiis sapiente rerum mollitia aliquid qui doloribus ratione pariatur inventore eligendi eum vel rem eius quia quas eum reprehenderit a corporis et maiores ut repudiandae eveniet molestiae repudiandae non totam.",
-    "image": "public/images/test.jpg",
-    "sort": 5,
-    "status": 1,
-    "created_at": "2023-09-11T00:33:34.000000Z",
-    "updated_at": "2023-09-11T00:36:01.000000Z"
-  }
+    {
+        "id": 5,
+        "category_id": 4,
+        "name": "et laborum ut aliquid voluptatum",
+        "slug": "odit",
+        "content": "Quae optio ullam molestiae delectus officiis sapiente rerum mollitia aliquid qui doloribus ratione pariatur inventore eligendi eum vel rem eius quia quas eum reprehenderit a corporis et maiores ut repudiandae eveniet molestiae repudiandae non totam.",
+        "image": "public/images/test.jpg",
+        "sort": 5,
+        "status": 1,
+        "created_at": "2023-09-11T00:33:34.000000Z",
+        "updated_at": "2023-09-11T00:36:01.000000Z"
+    }
 
