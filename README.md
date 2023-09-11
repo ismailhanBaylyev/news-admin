@@ -38,7 +38,7 @@ composer install
 php artisan key:generate
 ```
 
-4. Теперь нужно добавить информацию о базе данных в .env файл:
+4. Теперь нужно добавить информацию о базе данных в .env файл (Для этого найдите файл <b>.env.example</b> и удалите <b>.example</b>):
 
 ```
 DB_HOST=localhost
