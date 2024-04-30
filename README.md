@@ -2,7 +2,7 @@
 
 # Laravel - Админ-панель новостей
 
-<p align="center"<img src="https://raw.githubusercontent.com/ismailhanBaylyev/news-admin/main/public/assets/images/screen/news_admin.png" height="auto" width="100%"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/ismailhanBaylyev/news-admin/main/public/assets/images/screen/news_admin.png" height="auto" width="100%"></p>
 
 > Макет админ-панели был сделан на Bootstrap. Также для удобство и визуальной привлекательности были использованы, такие плагины:
 
